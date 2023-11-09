@@ -10,24 +10,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cootramixtol.sipd.entities.Conductor;
-import com.cootramixtol.sipd.services.conductor.ConductorService;
+import com.cootramixtol.sipd.entities.Despacho;
+import com.cootramixtol.sipd.services.despacho.DespachoService;
 
 @RestController
-@RequestMapping("api/conductores")
-public class ConductorController {
+@RequestMapping("api/despachos")
+public class DespachoController {
 
     @Autowired
-    private ConductorService conductorService;
+    private DespachoService despachoService;
 
     @GetMapping
-    public ResponseEntity<List<Conductor>> listar(){
-        return ResponseEntity.ok(conductorService.listar());
+    public ResponseEntity<List<Despacho>> listar(){
+        return ResponseEntity.ok(despachoService.listar());
     }
 
     @PostMapping
-    public ResponseEntity<Conductor> registrar(@RequestBody Conductor conductor){
-        return ResponseEntity.ok(conductorService.registrar(conductor));
-    } 
+    public ResponseEntity<Despacho> resgistrar(@RequestBody Despacho despacho){
+        return ResponseEntity.ok(despachoService.registrar(despacho));
+    }
     
 }

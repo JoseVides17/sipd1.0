@@ -6,7 +6,7 @@ import com.cootramixtol.sipd.entities.Conductor;
 
 public interface ConductorService {
     
-    Conductor registrar(Conductor asociado);
+    Conductor registrar(Conductor conductor);
 	Conductor consultar(long id);
 	List<Conductor> listar();
 
