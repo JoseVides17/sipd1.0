@@ -3,6 +3,7 @@ package com.cootramixtol.sipd.services.asociado;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.cootramixtol.sipd.entities.Asociado;
@@ -26,6 +27,9 @@ public class AsociadoServiceImpl implements AsociadoService{
 			existePorCorreo = null;
 			return existe;
 		}
+
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        asociado.setClave(bCryptPasswordEncoder.encode(asociado.getClave()));
 
 		return asociadoRepository.save(asociado);
 	}
