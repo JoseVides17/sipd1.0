@@ -1,5 +1,6 @@
 package com.cootramixtol.sipd.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -17,7 +18,9 @@ import lombok.Setter;
 public class Rol {
 	
 	@Id 
+	@Column(name = "codigo")
 	private String codigo;
+	@Column(name = "descripcion")
 	private String descripcion;
 
 }

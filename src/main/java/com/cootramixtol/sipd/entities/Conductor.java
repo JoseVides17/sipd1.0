@@ -24,13 +24,19 @@ public class Conductor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "codigo")
 	private long codigo;
+	@Column(name = "identificacion")
 	private int identificacion;
+	@Column(name = "nombres")
 	private String nombres;
+	@Column(name = "apellidos")
 	private String apellidos;
+	@Column(name = "activo")
 	private boolean activo;
 	@Column(name = "fecha_nacimiento")
 	private LocalDate fechaNacimiento;
+	@Column(name = "licencia")
 	private String licencia;
 	@Column(name = "categoria_liencia")
 	private String categoriaLicencia;

@@ -25,11 +25,15 @@ public class Despacho {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private long id;
+	@Column(name = "ruta")
 	private String ruta;
 	@Column(name = "placa_vehiculo")
 	private String placaVehiculo;
+	@Column(name = "hora")
 	private LocalDateTime hora;
+	@Column(name = "fecha")
 	private LocalDate fecha;
 	@Column(name = "numero_pasajeros")
 	private int numeroPasajeros;

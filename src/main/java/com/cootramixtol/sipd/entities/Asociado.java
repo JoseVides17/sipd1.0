@@ -25,6 +25,7 @@ public class Asociado {
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
+	@Column(name = "id")
 	private long id;
 	@Column(name = "identificacion")
 	private long identificacion;

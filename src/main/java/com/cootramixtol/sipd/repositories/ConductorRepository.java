@@ -11,6 +11,6 @@ import com.cootramixtol.sipd.entities.Conductor;
 public interface ConductorRepository extends JpaRepository<Conductor, Long>{
     
     Conductor findById(long id);
-    List<Conductor> findByNameContains(String name);
+    List<Conductor> findByNombresContains(String nombres);
 
 }

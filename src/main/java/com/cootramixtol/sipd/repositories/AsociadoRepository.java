@@ -11,7 +11,7 @@ import com.cootramixtol.sipd.entities.Asociado;
 public interface AsociadoRepository  extends JpaRepository<Asociado, Long>{
 
     Asociado findById(long id);
-    List<Asociado> findByNameContains(String name);
+    List<Asociado> findByNombresContains(String nombres);
 
 }
  

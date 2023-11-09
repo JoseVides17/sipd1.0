@@ -24,8 +24,11 @@ public class Planilla {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "numero")
 	private int numero;
+	@Column(name = "fecha")
 	private LocalDate fecha;
+	@Column(name = "hora")
 	private LocalDateTime hora;
 	@Column(name = "registrado_por")
 	private long registrdoPor;
@@ -35,6 +38,7 @@ public class Planilla {
 	private String placaVehiculo;
 	@Column(name = "codigo_tarifa")
 	private int codigoTarifa;
+	@Column(name = "estado")
 	private int estado;
 	@Column(name = "fecha_registro")
 	private LocalDate fechaRegistro;

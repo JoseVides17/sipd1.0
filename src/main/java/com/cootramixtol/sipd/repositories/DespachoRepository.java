@@ -11,6 +11,6 @@ import com.cootramixtol.sipd.entities.Despacho;
 public interface DespachoRepository extends JpaRepository<Despacho, Long>{
 
     Despacho findById(long id);
-    List<Despacho> findByNameContains(String name);
+    List<Despacho> findByRutaContains(String ruta);
     
 }

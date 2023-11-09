@@ -23,13 +23,18 @@ import lombok.Setter;
 public class Vehiculo {
 	 
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "codigo")
 	private long codigo;
 	@Id
+	@Column(name = "placa")
 	private String placa;
 	@Column(name = "id_conductor")
 	private long idConductor;
+	@Column(name = "tipo")
 	private String tipo;
+	@Column(name = "marca")
 	private String marca;
+	@Column(name = "modelo")
 	private Date modelo;
 	@Column(name = "capacidad_pasajeros")
 	private int capacidadPasajeros;
@@ -37,6 +42,7 @@ public class Vehiculo {
 	private String tarjetaPropiedad;
 	@Column(name = "codigo_tarifa")
 	private int codigoTarifa;
+	@Column(name = "activo")
 	private int activo;
 	@Column(name = "fecha_registro")
 	private LocalDate fechaRegistro;
