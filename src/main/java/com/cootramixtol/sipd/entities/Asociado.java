@@ -27,7 +27,7 @@ public class Asociado {
 	@Id
 	@Column(name = "id")
 	private long id;
-	@Column(name = "identificacion")
+	@Column(name = "identificacion", unique = true)
 	private long identificacion;
 	@Column(name = "nombres")
 	private String nombres;
@@ -42,7 +42,7 @@ public class Asociado {
 	private String rol;
 	@Column(name = "clave")
 	private String clave;
-	@Column(name = "correo")
+	@Column(name = "correo", unique = true)
 	private String correo;
 
 	public Asociado() {
