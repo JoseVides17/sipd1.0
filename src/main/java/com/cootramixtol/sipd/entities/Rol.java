@@ -3,7 +3,7 @@ package com.cootramixtol.sipd.entities;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

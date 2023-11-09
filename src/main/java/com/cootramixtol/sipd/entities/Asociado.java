@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,12 +19,12 @@ import lombok.Setter;
 @Getter
 @Entity
 @AllArgsConstructor 
-
 @Table(name = "Asociados")
 public class Asociado {
 	
-	@Id
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
 	private long id;
 	@Column(name = "identificacion")
 	private long identificacion;
