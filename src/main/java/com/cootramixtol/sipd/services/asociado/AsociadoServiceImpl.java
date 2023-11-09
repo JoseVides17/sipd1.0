@@ -20,17 +20,11 @@ public class AsociadoServiceImpl implements AsociadoService{
 	public Asociado registrar(Asociado asociado) {
 
 		var existe = asociadoRepository.findByIdentificacion(asociado.getIdentificacion());
-		if (existe != null) {
-
-			return existe;
-			
-		}
-
 		var existePorCorreo = asociadoRepository.findByCorreo(asociado.getCorreo());
-		if (existePorCorreo != null) {
-
-			return existePorCorreo;
-			
+		if (existe != null || existePorCorreo != null) {
+			existe = null;
+			existePorCorreo = null;
+			return existe;
 		}
 
 		return asociadoRepository.save(asociado);
