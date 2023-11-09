@@ -23,4 +23,8 @@ public class Rol {
 	@Column(name = "descripcion")
 	private String descripcion;
 
+	public Rol() {
+		// Constructor por defecto vacío
+	}
+
 }

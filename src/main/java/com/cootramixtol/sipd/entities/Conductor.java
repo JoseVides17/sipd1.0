@@ -47,4 +47,8 @@ public class Conductor {
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
 
+	public Conductor() {
+		// Constructor por defecto vacío
+	}
+
 }

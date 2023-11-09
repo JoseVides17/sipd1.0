@@ -39,6 +39,10 @@ public class Despacho {
 	private int numeroPasajeros;
 	@Column(name = "fecha_registro")
 	private LocalDate fechaRegistro;
+
+	public Despacho() {
+		// Constructor por defecto vacío
+	}
 	
 
 }

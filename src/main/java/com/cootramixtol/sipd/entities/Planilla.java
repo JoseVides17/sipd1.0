@@ -45,4 +45,8 @@ public class Planilla {
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
 
+	public Planilla() {
+		// Constructor por defecto vacío
+	}
+
 }

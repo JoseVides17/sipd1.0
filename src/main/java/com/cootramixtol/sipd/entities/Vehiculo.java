@@ -51,4 +51,8 @@ public class Vehiculo {
 	@Column(name = "vigencia_soat")
 	private Date vigenciaSoat;
 
+	public Vehiculo() {
+		// Constructor por defecto vacío
+	}
+
 }

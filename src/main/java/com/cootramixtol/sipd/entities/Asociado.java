@@ -44,5 +44,9 @@ public class Asociado {
 	private String clave;
 	@Column(name = "correo")
 	private String correo;
+
+	public Asociado() {
+		// Constructor por defecto vacío
+	}
 	
 }

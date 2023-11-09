@@ -39,4 +39,8 @@ public class Tarifa {
 	@Column(name = "aporte_parqueadero")
 	private double aporteParqueadero;
 
+	public Tarifa() {
+		// Constructor por defecto vacío
+	}
+
 }
