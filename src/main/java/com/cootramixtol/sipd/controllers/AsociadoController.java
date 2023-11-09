@@ -22,14 +22,12 @@ public class AsociadoController {
 	private AsociadoService asociadoServices;
 	
 	@GetMapping
-	public ResponseEntity<List<Asociado>> listar() {
-				
+	public ResponseEntity<List<Asociado>> listar() {	
 		return ResponseEntity.ok(asociadoServices.listar());
 	}
 	
 	@PostMapping
 	public ResponseEntity<Asociado> registrar(@RequestBody Asociado asociado ){
-		
 		return ResponseEntity.ok(asociadoServices.registrar(asociado));
 	}
 

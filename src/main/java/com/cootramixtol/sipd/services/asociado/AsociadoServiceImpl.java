@@ -9,7 +9,6 @@ import com.cootramixtol.sipd.entities.Asociado;
 import com.cootramixtol.sipd.repositories.AsociadoRepository;
 
 @Service
-
 public class AsociadoServiceImpl implements AsociadoService{
 	
 
@@ -19,19 +18,16 @@ public class AsociadoServiceImpl implements AsociadoService{
 
 	@Override
 	public Asociado registrar(Asociado asociado) {
-		
 		return asociadoRepository.save(asociado);
 	}
 
 	@Override
 	public Asociado consultar(long id) {
-	
-		return asociadoRepository.getById(null);
+		return asociadoRepository.findById(id);
 	}
 
 	@Override
 	public List<Asociado> listar() {
-		// TODO Auto-generated method stub
 		return asociadoRepository.findAll();
 	}
 

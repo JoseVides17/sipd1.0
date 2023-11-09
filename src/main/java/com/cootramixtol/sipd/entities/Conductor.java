@@ -24,7 +24,7 @@ public class Conductor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int codigo;
+	private long codigo;
 	private int identificacion;
 	private String nombres;
 	private String apellidos;
