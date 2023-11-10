@@ -27,7 +27,7 @@ public class Planilla {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "numero")
-	private long numero;
+	private Long numero;
 	@Column(name = "fecha")
 	private LocalDate fecha;
 	@Column(name = "hora")
@@ -47,10 +47,9 @@ public class Planilla {
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
 
-	@Column(name = "codigo_ruta")
 	@ManyToOne
     @JoinColumn(name = "codigo_ruta")
-    private String ruta;
+    private Ruta ruta;
 
 	public Planilla() {
 		// Constructor por defecto vacío

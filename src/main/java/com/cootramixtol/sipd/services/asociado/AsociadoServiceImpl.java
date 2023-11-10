@@ -19,15 +19,7 @@ public class AsociadoServiceImpl implements AsociadoService{
 
 	@Override
 	public Asociado registrar(Asociado asociado) {
-
-		var existe = asociadoRepository.findByIdentificacion(asociado.getIdentificacion());
-		var existePorCorreo = asociadoRepository.findByCorreo(asociado.getCorreo());
-		if (existe != null || existePorCorreo != null) {
-			existe = null;
-			existePorCorreo = null;
-			return existe;
-		}
-
+	
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         asociado.setClave(bCryptPasswordEncoder.encode(asociado.getClave()));
 
@@ -36,7 +28,7 @@ public class AsociadoServiceImpl implements AsociadoService{
 
 	@Override
 	public Asociado consultar(long id) {
-		return asociadoRepository.findById(id);
+		return asociadoRepository.findByIdAsociado(id);
 	}
 
 	@Override

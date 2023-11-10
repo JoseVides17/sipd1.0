@@ -24,13 +24,13 @@ public class Ruta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo_ruta")
-    private String codigoRuta;
+    private Long codigoRuta;
     @Column(name = "nombre")
     private String nombre;
     
     @Column(name = "planillas")
-    @OneToMany(mappedBy = "numero_planilla")
-    private List<Long> planillas;
+    @OneToMany(mappedBy = "numero")
+    private List<Planilla> planillas;
 
     public Ruta() {
 		// Constructor por defecto vacío

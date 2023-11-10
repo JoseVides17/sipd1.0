@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 import javax.persistence.Table;
 
@@ -23,14 +21,10 @@ import lombok.Setter;
 @AllArgsConstructor 
 @Table(name = "Asociados")
 public class Asociado {
-	
-	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	@Id
-	@Column(name = "id")
-	private long id;
-	@Column(name = "identificacion", unique = true)
-	private long identificacion;
+	@Column(name = "id_asociado")
+	private Long idAsociado;
 	@Column(name = "nombres")
 	private String nombres;
 	@Column(name = "apellidos")
@@ -48,8 +42,8 @@ public class Asociado {
 	private String correo;
 
 	@Column(name = "vehiculos")
-    @OneToMany(mappedBy = "placa_vehiculo")
-    private List<String> vehiculos;
+    @OneToMany(mappedBy = "idAsociado")
+    private List<Asociado> vehiculos;
 
 	public Asociado() {
 		// Constructor por defecto vacío

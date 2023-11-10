@@ -25,9 +25,10 @@ public class Conductor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigo")
 	private long codigo;
+
 	@Id
-	@Column(name = "identificacion_conductor")
-	private int identificacion;
+	@Column(name = "identificacion_conductor", nullable = false)
+	private Long identificacion;
 	@Column(name = "nombres")
 	private String nombres;
 	@Column(name = "apellidos")

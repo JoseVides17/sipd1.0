@@ -27,14 +27,14 @@ public class Vehiculo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigo")
 	private long codigo;
+	
 	@Id
 	@Column(name = "placa_vehiculo")
 	private String placa;
 
-	@Column(name = "id_conductor")
 	@ManyToOne
     @JoinColumn(name = "identificacion_conductor")
-	private long idConductor;
+	private Conductor idConductor;
 
 	@Column(name = "tipo")
 	private String tipo;
@@ -57,10 +57,9 @@ public class Vehiculo {
 	@Column(name = "vigencia_soat")
 	private Date vigenciaSoat;
 
-	@Column(name = "id_asociado")
 	@ManyToOne
-    @JoinColumn(name = "identificacion")
-    private long idAsociado;
+    @JoinColumn(name = "id_asociado")
+    private Asociado idAsociado;
 
 	public Vehiculo() {
 		// Constructor por defecto vacío
