@@ -2,6 +2,7 @@ package com.cootramixtol.sipd.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,6 +48,15 @@ public class Planilla {
 	private LocalDate fechaRegistro;
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
+
+	@Column(name = "codigo_ruta")
+	@ManyToOne
+    @JoinColumn(name = "codigo_ruta")
+    private Ruta ruta;
+
+	@Column(name = "detalle_planilla")
+    @OneToMany(mappedBy = "detalle_planilla")
+    private List<DetallePlanilla> detallesPlanilla;
 
 	public Planilla() {
 		// Constructor por defecto vacío
