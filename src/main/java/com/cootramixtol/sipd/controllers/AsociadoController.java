@@ -28,7 +28,7 @@ public class AsociadoController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Asociado> findByIdAsociado(@PathVariable Long id){
+	public ResponseEntity<Asociado> findById(@PathVariable Long id){
 		return ResponseEntity.ok(asociadoServices.consultar(id));
 	}
 	

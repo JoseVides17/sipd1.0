@@ -22,13 +22,12 @@ import lombok.Setter;
 @Table(name = "Conductores" )
 public class Conductor {
 	
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "codigo")
 	private long codigo;
-
-	@Id
-	@Column(name = "identificacion_conductor", nullable = false)
-	private Long identificacion;
+	@Column(name = "identificacion")
+	private int identificacion;
 	@Column(name = "nombres")
 	private String nombres;
 	@Column(name = "apellidos")

@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,9 +23,9 @@ import lombok.Setter;
 public class Planilla { 
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "numero")
-	private Long numero;
+	private int numero;
 	@Column(name = "fecha")
 	private LocalDate fecha;
 	@Column(name = "hora")
@@ -46,10 +44,6 @@ public class Planilla {
 	private LocalDate fechaRegistro;
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
-
-	@ManyToOne
-    @JoinColumn(name = "codigo_ruta")
-    private Ruta ruta;
 
 	public Planilla() {
 		// Constructor por defecto vacío

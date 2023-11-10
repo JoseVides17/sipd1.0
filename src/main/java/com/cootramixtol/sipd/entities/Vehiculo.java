@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,18 +22,14 @@ import lombok.Setter;
 @Table(name = "Vehiculos")
 public class Vehiculo {
 	 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "codigo")
 	private long codigo;
-	
 	@Id
-	@Column(name = "placa_vehiculo")
+	@Column(name = "placa")
 	private String placa;
-
-	@ManyToOne
-    @JoinColumn(name = "identificacion_conductor")
-	private Conductor idConductor;
-
+	@Column(name = "id_conductor")
+	private long idConductor;
 	@Column(name = "tipo")
 	private String tipo;
 	@Column(name = "marca")
@@ -56,10 +50,6 @@ public class Vehiculo {
 	private LocalDate ultimaFechaActualizacion;
 	@Column(name = "vigencia_soat")
 	private Date vigenciaSoat;
-
-	@ManyToOne
-    @JoinColumn(name = "id_asociado")
-    private Asociado idAsociado;
 
 	public Vehiculo() {
 		// Constructor por defecto vacío

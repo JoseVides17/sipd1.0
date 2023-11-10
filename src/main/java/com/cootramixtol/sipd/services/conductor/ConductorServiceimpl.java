@@ -25,15 +25,8 @@ public class ConductorServiceimpl implements ConductorService{
     }
 
     @Override
-    public Conductor registrar(Conductor conductor) {
-
-        var existe = conductorRepository.findByIdentificacion(conductor.getIdentificacion());
-        if(existe != null){
-            existe = null;
-            return (Conductor) existe;
-        }
-
-        return conductorRepository.save(conductor);
+    public Conductor registrar(Conductor asociado) {
+        return conductorRepository.save(asociado);
     }
     
 }
