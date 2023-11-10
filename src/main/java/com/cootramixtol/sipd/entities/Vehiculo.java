@@ -26,7 +26,7 @@ public class Vehiculo {
 	@Column(name = "codigo")
 	private long codigo;
 	@Id
-	@Column(name = "placa")
+	@Column(name = "placa_vehiculo")
 	private String placa;
 	@Column(name = "id_conductor")
 	private long idConductor;

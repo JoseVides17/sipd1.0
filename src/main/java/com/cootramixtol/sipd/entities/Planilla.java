@@ -54,10 +54,6 @@ public class Planilla {
     @JoinColumn(name = "codigo_ruta")
     private String ruta;
 
-	@Column(name = "detalle_planilla")
-    @OneToMany(mappedBy = "numero_detalle_planilla")
-    private List<Long> detallesPlanilla;
-
 	public Planilla() {
 		// Constructor por defecto vacío
 	}

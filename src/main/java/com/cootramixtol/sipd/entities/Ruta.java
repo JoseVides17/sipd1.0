@@ -32,10 +32,6 @@ public class Ruta {
     @OneToMany(mappedBy = "numero_planilla")
     private List<Long> planillas;
 
-    @Column(name = "detalles_planilla")
-    @OneToMany(mappedBy = "numero_detalle_planilla")
-    private List<Long> detallesPlanilla;
-
     public Ruta() {
 		// Constructor por defecto vacío
 	}
