@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -50,6 +52,11 @@ public class Vehiculo {
 	private LocalDate ultimaFechaActualizacion;
 	@Column(name = "vigencia_soat")
 	private Date vigenciaSoat;
+
+	@Column(name = "id_asociado")
+	@ManyToOne
+    @JoinColumn(name = "identificacion")
+    private long idAsociado;
 
 	public Vehiculo() {
 		// Constructor por defecto vacío

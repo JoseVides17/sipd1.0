@@ -1,6 +1,7 @@
 package com.cootramixtol.sipd.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -44,6 +46,10 @@ public class Asociado {
 	private String clave;
 	@Column(name = "correo", unique = true)
 	private String correo;
+
+	@Column(name = "vehiculos")
+    @OneToMany(mappedBy = "placa_vehiculo")
+    private List<String> vehiculos;
 
 	public Asociado() {
 		// Constructor por defecto vacío
