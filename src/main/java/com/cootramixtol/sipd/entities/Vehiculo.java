@@ -24,14 +24,18 @@ import lombok.Setter;
 @Table(name = "Vehiculos")
 public class Vehiculo {
 	 
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigo")
 	private long codigo;
 	@Id
 	@Column(name = "placa_vehiculo")
 	private String placa;
+
 	@Column(name = "id_conductor")
+	@ManyToOne
+    @JoinColumn(name = "identificacion_conductor")
 	private long idConductor;
+
 	@Column(name = "tipo")
 	private String tipo;
 	@Column(name = "marca")
