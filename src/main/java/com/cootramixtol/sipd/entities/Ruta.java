@@ -23,18 +23,18 @@ public class Ruta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigo")
-    private String codigo;
+    @Column(name = "codigo_ruta")
+    private String codigoRuta;
     @Column(name = "nombre")
     private String nombre;
     
     @Column(name = "planillas")
-    @OneToMany(mappedBy = "planillas")
-    private List<Planilla> planillas;
+    @OneToMany(mappedBy = "numero_planilla")
+    private List<Long> planillas;
 
-    @Column(name = "detalle_planilla")
-    @OneToMany(mappedBy = "detalle_planilla")
-    private List<DetallePlanilla> detallesPlanilla;
+    @Column(name = "detalles_planilla")
+    @OneToMany(mappedBy = "numero_detalle_planilla")
+    private List<Long> detallesPlanilla;
 
     public Ruta() {
 		// Constructor por defecto vacío

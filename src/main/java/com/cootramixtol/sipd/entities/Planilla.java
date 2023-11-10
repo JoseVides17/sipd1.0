@@ -27,9 +27,9 @@ import lombok.Setter;
 public class Planilla { 
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "numero")
-	private int numero;
+	private long numero;
 	@Column(name = "fecha")
 	private LocalDate fecha;
 	@Column(name = "hora")
@@ -52,11 +52,11 @@ public class Planilla {
 	@Column(name = "codigo_ruta")
 	@ManyToOne
     @JoinColumn(name = "codigo_ruta")
-    private Ruta ruta;
+    private String ruta;
 
 	@Column(name = "detalle_planilla")
-    @OneToMany(mappedBy = "detalle_planilla")
-    private List<DetallePlanilla> detallesPlanilla;
+    @OneToMany(mappedBy = "numero_detalle_planilla")
+    private List<Long> detallesPlanilla;
 
 	public Planilla() {
 		// Constructor por defecto vacío

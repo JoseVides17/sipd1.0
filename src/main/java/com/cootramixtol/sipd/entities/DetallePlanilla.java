@@ -22,21 +22,18 @@ public class DetallePlanilla {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int numero;
-    @Column(name = "numero_planilla")
-    private int numeroPlanilla;
-    @Column(name = "codigo_ruta")
-    private String codigoRuta;
+    @Column(name = "numero_detalle_planilla")
+    private long numeroPlanilla;
 
     @Column(name = "codigo_ruta")
     @ManyToOne
     @JoinColumn(name = "codigo_ruta", insertable = false, updatable = false)
-    private Ruta ruta;
+    private String ruta;
 
     @Column(name = "numero_planilla")
     @ManyToOne
     @JoinColumn(name = "numero_planilla", insertable = false, updatable = false)
-    private Planilla planilla;
+    private long planilla;
 
     public DetallePlanilla() {
 		// Constructor por defecto vacío
