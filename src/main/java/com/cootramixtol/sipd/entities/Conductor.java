@@ -23,7 +23,7 @@ import lombok.Setter;
 public class Conductor {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigo")
 	private long codigo;
 	@Column(name = "identificacion")

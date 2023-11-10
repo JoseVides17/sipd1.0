@@ -23,7 +23,7 @@ import lombok.Setter;
 public class Asociado {
 	
 	
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(name = "id")
 	private long id;

@@ -12,5 +12,6 @@ public interface ConductorRepository extends JpaRepository<Conductor, Long>{
     
     Conductor findById(long id);
     List<Conductor> findByNombresContains(String nombres);
+    Object findByIdentificacion(int identificacion);
 
 }
