@@ -29,7 +29,7 @@ public class Conductor {
 	@Column(name = "codigo")
 	private long codigo;
 	@Column(name = "identificacion", unique = true)
-	private int identificacion;
+	private long identificacion;
 	@Column(name = "nombres")
 	private String nombres;
 	@Column(name = "apellidos")
