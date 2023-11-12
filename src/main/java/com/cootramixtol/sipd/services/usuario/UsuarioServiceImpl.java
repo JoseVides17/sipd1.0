@@ -1,4 +1,4 @@
-package com.cootramixtol.sipd.services.asociado;
+package com.cootramixtol.sipd.services.usuario;
 
 import java.util.List;
 
@@ -7,21 +7,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.cootramixtol.sipd.entities.Usuario;
-import com.cootramixtol.sipd.repositories.AsociadoRepository;
+import com.cootramixtol.sipd.repositories.UsuarioRepository;
 
 @Service
-public class AsociadoServiceImpl implements AsociadoService{
+public class UsuarioServiceImpl implements UsuarioService{
 	
 
 	@Autowired
-	private AsociadoRepository asociadoRepository; 
+	private UsuarioRepository usuarioRepository; 
 		
 
 	@Override
 	public Usuario registrar(Usuario asociado) {
 
-		var existe = asociadoRepository.findByIdentificacion(asociado.getIdentificacion());
-		var existePorCorreo = asociadoRepository.findByCorreo(asociado.getCorreo());
+		var existe = usuarioRepository.findByIdentificacion(asociado.getIdentificacion());
+		var existePorCorreo = usuarioRepository.findByCorreo(asociado.getCorreo());
 		if (existe != null || existePorCorreo != null) {
 			existe = null;
 			existePorCorreo = null;
@@ -31,17 +31,17 @@ public class AsociadoServiceImpl implements AsociadoService{
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         asociado.setClave(bCryptPasswordEncoder.encode(asociado.getClave()));
 
-		return asociadoRepository.save(asociado);
+		return usuarioRepository.save(asociado);
 	}
 
 	@Override
 	public Usuario consultar(long id) {
-		return asociadoRepository.findById(id);
+		return usuarioRepository.findById(id);
 	}
 
 	@Override
 	public List<Usuario> listar() {
-		return asociadoRepository.findAll();
+		return usuarioRepository.findAll();
 	}
 
 }

@@ -1,12 +1,12 @@
-package com.cootramixtol.sipd.services.asociado;
+package com.cootramixtol.sipd.services.usuario;
 
 import java.util.List;
 
 import com.cootramixtol.sipd.entities.Usuario;
 
-public interface AsociadoService {
+public interface UsuarioService {
 	
-	 Usuario registrar(Usuario asociado);
+	 Usuario registrar(Usuario usuario);
 	 Usuario consultar(long id);
 	 List<Usuario> listar();
 

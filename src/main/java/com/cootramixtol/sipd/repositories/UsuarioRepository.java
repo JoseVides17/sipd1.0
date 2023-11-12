@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.cootramixtol.sipd.entities.Usuario;
 
 @Repository
-public interface AsociadoRepository  extends JpaRepository<Usuario, Long>{
+public interface UsuarioRepository  extends JpaRepository<Usuario, Long>{
 
     Usuario findById(long id);
     Usuario findByIdentificacion(long identificacion);

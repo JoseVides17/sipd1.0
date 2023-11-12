@@ -12,29 +12,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cootramixtol.sipd.entities.Usuario;
-import com.cootramixtol.sipd.services.asociado.AsociadoService;
+import com.cootramixtol.sipd.services.usuario.UsuarioService;
 
 @RestController
 @RequestMapping("api/asociados") 
-public class AsociadoController {
+public class UsuarioController {
 	
 	
 	@Autowired
-	private AsociadoService asociadoServices;
+	private UsuarioService usuarioService;
 	
 	@GetMapping
 	public ResponseEntity<List<Usuario>> listar() {	
-		return ResponseEntity.ok(asociadoServices.listar());
+		return ResponseEntity.ok(usuarioService.listar());
 	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Usuario> findById(@PathVariable Long id){
-		return ResponseEntity.ok(asociadoServices.consultar(id));
+		return ResponseEntity.ok(usuarioService.consultar(id));
 	}
 	
 	@PostMapping
 	public ResponseEntity<Usuario> registrar(@RequestBody Usuario asociado ){
-		return ResponseEntity.ok(asociadoServices.registrar(asociado));
+		return ResponseEntity.ok(usuarioService.registrar(asociado));
 	}
 
 }
