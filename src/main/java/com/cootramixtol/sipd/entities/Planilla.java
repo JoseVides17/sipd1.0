@@ -42,7 +42,7 @@ public class Planilla {
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
 
-	@JoinColumn(name = "detalles")
+	@Column(name = "detalles")
 	@OneToMany(mappedBy = "planilla", cascade = CascadeType.ALL)
     private List<DetallePlanilla> detalles;
 
