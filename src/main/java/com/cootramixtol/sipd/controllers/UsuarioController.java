@@ -15,7 +15,7 @@ import com.cootramixtol.sipd.entities.Usuario;
 import com.cootramixtol.sipd.services.usuario.UsuarioService;
 
 @RestController
-@RequestMapping("api/asociados") 
+@RequestMapping("api/usuarios") 
 public class UsuarioController {
 	
 	
