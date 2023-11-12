@@ -12,7 +12,7 @@ public interface Mapeador {
     
       Mapeador INSTANCE = Mappers.getMapper( Mapeador.class );
 
-      CrearVehiculoDtoResp VehiculoToVehiculoDto(Vehiculo vehiculo);
-      Vehiculo VehiculoDtoToVehiculo(CrearVehiciculoDtoReq crearVehiciculoDtoReq);
-      
+      CrearVehiculoDtoResp MapVehiculo(Vehiculo vehiculo);
+      Vehiculo MapVehiculo(CrearVehiciculoDtoReq crearVehiciculoDtoReq);
+
 }

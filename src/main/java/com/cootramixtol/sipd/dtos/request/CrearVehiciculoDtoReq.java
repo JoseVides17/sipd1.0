@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 public class CrearVehiciculoDtoReq {
 
-
 	private String placa;
 	private long idConductor;
 	private String tipo;
@@ -20,6 +19,5 @@ public class CrearVehiciculoDtoReq {
 	private int codigoTarifa;
 	private Date vigenciaSoat;
 	private Date vigenciaRtm;
-
     
 }
