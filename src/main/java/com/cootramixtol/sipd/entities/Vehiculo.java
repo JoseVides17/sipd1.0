@@ -16,12 +16,14 @@ import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Vehiculos")
 public class Vehiculo {
 
@@ -53,6 +55,8 @@ public class Vehiculo {
 	private LocalDate ultimaFechaActualizacion;
 	@Column(name = "vigencia_soat")
 	private Date vigenciaSoat;
+	@Column(name = "vigencia_rtm")
+	private Date vigenciaRtm;
 
 	@Column(name = "vehiculoAsociado")
 	@OneToMany(mappedBy = "vehiculo")
@@ -69,8 +73,6 @@ public class Vehiculo {
 	@OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL)
     private List<Despacho> despachos;
 
-	public Vehiculo() {
-		// Constructor por defecto vacío
-	}
+
 
 }

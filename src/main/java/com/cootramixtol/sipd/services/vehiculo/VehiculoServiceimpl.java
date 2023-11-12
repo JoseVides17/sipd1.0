@@ -5,7 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cootramixtol.sipd.dtos.request.CrearVehiciculoDtoReq;
+import com.cootramixtol.sipd.dtos.response.CrearVehiculoDtoResp;
 import com.cootramixtol.sipd.entities.Vehiculo;
+import com.cootramixtol.sipd.mapper.Mapeador;
 import com.cootramixtol.sipd.repositories.VehiculoRepository;
 
 @Service
@@ -25,8 +28,12 @@ public class VehiculoServiceimpl implements VehiculoService{
     }
 
     @Override
-    public Vehiculo registrar(Vehiculo vehiculo) {
-        return vehiculoRepository.save(vehiculo);
+    public CrearVehiculoDtoResp registrar(CrearVehiciculoDtoReq crearVehiciculoDtoReq) {
+
+       Vehiculo vehiculo = Mapeador.INSTANCE.VehiculoDtoToVehiculo(crearVehiciculoDtoReq);
+       Vehiculo nuevoVehiculo =  vehiculoRepository.save(vehiculo);
+       
+       return Mapeador.INSTANCE.VehiculoToVehiculoDto(nuevoVehiculo);
     }
     
 }

@@ -47,7 +47,7 @@ public class Planilla {
     private List<DetallePlanilla> detalles;
 
 	@ManyToOne
-	@JoinColumn(name = "codigo_tarifa")
+	@JoinColumn(name = "id_tarifa")
 	private Tarifa tarifa;
 
 	@ManyToOne

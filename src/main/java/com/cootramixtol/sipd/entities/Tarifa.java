@@ -27,8 +27,8 @@ public class Tarifa {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo")
-	private int codigo;
+	@Column(name = "id")
+	private long id;
 	@Column(name = "gastos_administracion")
 	private double gastosAdministracion;
 	@Column(name = "aporte_social")
