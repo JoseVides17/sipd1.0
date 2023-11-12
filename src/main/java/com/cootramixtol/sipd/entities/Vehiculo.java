@@ -61,6 +61,10 @@ public class Vehiculo {
 	@OneToMany(mappedBy = "vehiculo")
     private List<VehiculoConductor> vehiculoConductores;
 
+	@Column(name = "planillas")
+	@OneToMany(mappedBy = "vehiculo")
+    private List<Planilla> planillas;
+
 	public Vehiculo() {
 		// Constructor por defecto vacío
 	}

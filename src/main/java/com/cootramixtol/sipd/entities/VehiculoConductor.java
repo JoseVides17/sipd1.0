@@ -17,7 +17,7 @@ import lombok.Setter;
 @Getter
 @Entity
 @AllArgsConstructor
-@Table(name = "Vehiculos")
+@Table(name = "Vehiculos_conductores")
 public class VehiculoConductor {
     
     @Id

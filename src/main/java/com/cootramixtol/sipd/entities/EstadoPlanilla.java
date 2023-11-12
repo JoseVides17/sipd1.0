@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-@Table(name = "Conductores" )
+@Table(name = "estado_planillas" )
 public class EstadoPlanilla {
     
     @Id

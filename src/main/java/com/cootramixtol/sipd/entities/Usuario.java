@@ -51,6 +51,10 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario")
     private List<VehiculoUsuario> vehiculoUsuarios;
 
+	@Column(name = "planillas_registradas")
+	@OneToMany(mappedBy = "registradoPor")
+    private List<Planilla> planillasRegistradas;
+
 	public Usuario() {
 		// Constructor por defecto vacío
 	}

@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
@@ -33,14 +35,6 @@ public class Planilla {
 	private LocalDate fecha;
 	@Column(name = "hora")
 	private LocalDateTime hora;
-	@Column(name = "registrado_por")
-	private long registrdoPor;
-	@Column(name = "id_conductor")
-	private long idConductor;
-	@Column(name = "placa_vehiculo")
-	private String placaVehiculo;
-	@Column(name = "codigo_tarifa")
-	private int codigoTarifa;
 	@Column(name = "estado")
 	private int estado;
 	@Column(name = "fecha_registro")
@@ -48,9 +42,26 @@ public class Planilla {
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
 
-	@Column(name = "detalles")
+	@JoinColumn(name = "detalles")
 	@OneToMany(mappedBy = "planilla", cascade = CascadeType.ALL)
     private List<DetallePlanilla> detalles;
+
+	@ManyToOne
+	@JoinColumn(name = "codigo_tarifa")
+	private Tarifa tarifa;
+
+	@ManyToOne
+	@JoinColumn(name = "id_conductor")
+	private Conductor conductor;
+
+	@ManyToOne
+	@JoinColumn(name = "placa_vehiculo")
+	private Vehiculo vehiculo;
+
+	@ManyToOne
+	@JoinColumn(name = "registrado_por")
+	private Usuario registradoPor;
+
 
 	public Planilla() {
 		// Constructor por defecto vacío
