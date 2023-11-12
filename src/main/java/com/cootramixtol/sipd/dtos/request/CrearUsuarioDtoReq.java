@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CrearUsuarioDto {
+public class CrearUsuarioDtoReq {
     
     private long identificacion;
     private String nombres;

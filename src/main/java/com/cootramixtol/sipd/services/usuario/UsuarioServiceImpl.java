@@ -2,12 +2,14 @@ package com.cootramixtol.sipd.services.usuario;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.cootramixtol.sipd.dtos.request.CrearUsuarioDto;
+import com.cootramixtol.sipd.dtos.request.CrearUsuarioDtoReq;
+import com.cootramixtol.sipd.dtos.response.CrearUsuarioDtoResp;
 import com.cootramixtol.sipd.entities.Rol;
 import com.cootramixtol.sipd.entities.Usuario;
 import com.cootramixtol.sipd.repositories.RolRepository;
@@ -25,14 +27,14 @@ public class UsuarioServiceImpl implements UsuarioService{
 		
 
 	@Override
-	public Usuario registrar(CrearUsuarioDto crearUsuarioDto) {
+	public CrearUsuarioDtoResp registrar(CrearUsuarioDtoReq crearUsuarioDto) {
 
 		var existe = usuarioRepository.findByIdentificacion(crearUsuarioDto.getIdentificacion());
 		var existePorCorreo = usuarioRepository.findByCorreo(crearUsuarioDto.getCorreo());
-		if (existe != null || existePorCorreo != null) {
-			existe = null;
-			existePorCorreo = null;
-			return existe;
+		
+		if (Objects.nonNull(existe) && Objects.nonNull(existePorCorreo)) {
+			
+			return null;
 		}
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -54,7 +56,17 @@ public class UsuarioServiceImpl implements UsuarioService{
 		usuario.setFechaRegistro(LocalDate.now());
 
 
-		return usuarioRepository.save(usuario);
+		Usuario usuarioGuardado = usuarioRepository.save(usuario);
+
+		CrearUsuarioDtoResp crearUsuarioDtoResp = new  CrearUsuarioDtoResp();
+
+		crearUsuarioDtoResp.setIdentificacion(usuarioGuardado.getIdentificacion());
+		crearUsuarioDtoResp.setNombres(usuarioGuardado.getNombres());
+		crearUsuarioDtoResp.setApellidos(usuarioGuardado.getApellidos());
+		crearUsuarioDtoResp.setRol(usuarioGuardado.getRol().getDescripcion());
+		crearUsuarioDtoResp.setCorreo(usuarioGuardado.getCorreo());
+
+		return crearUsuarioDtoResp;
 	}
 
 	@Override
