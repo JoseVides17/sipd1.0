@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,14 +23,13 @@ public class Rol {
 	
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo")
-	private Long codigo;
-	@Column(name = "descripcion")
+	@Column(name = "id")
+	private Long id;
+	@Column(name = "descripcion", unique = true)
 	private String descripcion;
 
-	@ManyToOne
-	@JoinColumn(name = "usuario")
-	private Usuario usuario;
+	@OneToOne(mappedBy = "rol")
+    private Usuario usuario;
 
 	public Rol() {
 		// Constructor por defecto vacío
