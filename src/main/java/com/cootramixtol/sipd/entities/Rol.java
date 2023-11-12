@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +27,10 @@ public class Rol {
 	private Long codigo;
 	@Column(name = "descripcion")
 	private String descripcion;
+
+	@ManyToOne
+	@JoinColumn(name = "usuario")
+	private Usuario usuario;
 
 	public Rol() {
 		// Constructor por defecto vacío

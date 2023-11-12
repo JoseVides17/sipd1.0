@@ -40,8 +40,6 @@ public class Usuario {
 	private LocalDate fechaRegistro;
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
-	@Column(name = "rol")
-	private String rol;
 	@Column(name = "clave")
 	private String clave;
 	@Column(name = "correo", unique = true)
@@ -54,6 +52,10 @@ public class Usuario {
 	@Column(name = "planillas_registradas")
 	@OneToMany(mappedBy = "registradoPor")
     private List<Planilla> planillasRegistradas;
+	
+	@Column(name = "roles")
+	@OneToMany(mappedBy = "rol")
+    private List<Rol> roles;
 
 	public Usuario() {
 		// Constructor por defecto vacío
