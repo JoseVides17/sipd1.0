@@ -5,15 +5,15 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cootramixtol.sipd.entities.Asociado;
+import com.cootramixtol.sipd.entities.Usuario;
 
 @Repository
-public interface AsociadoRepository  extends JpaRepository<Asociado, Long>{
+public interface AsociadoRepository  extends JpaRepository<Usuario, Long>{
 
-    Asociado findById(long id);
-    Asociado findByIdentificacion(long identificacion);
-    Asociado findByCorreo(String correo);
-    List<Asociado> findByNombresContains(String nombres);
+    Usuario findById(long id);
+    Usuario findByIdentificacion(long identificacion);
+    Usuario findByCorreo(String correo);
+    List<Usuario> findByNombresContains(String nombres);
 
 }
  

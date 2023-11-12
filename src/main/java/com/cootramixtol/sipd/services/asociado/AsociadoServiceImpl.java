@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.cootramixtol.sipd.entities.Asociado;
+import com.cootramixtol.sipd.entities.Usuario;
 import com.cootramixtol.sipd.repositories.AsociadoRepository;
 
 @Service
@@ -18,7 +18,7 @@ public class AsociadoServiceImpl implements AsociadoService{
 		
 
 	@Override
-	public Asociado registrar(Asociado asociado) {
+	public Usuario registrar(Usuario asociado) {
 
 		var existe = asociadoRepository.findByIdentificacion(asociado.getIdentificacion());
 		var existePorCorreo = asociadoRepository.findByCorreo(asociado.getCorreo());
@@ -35,12 +35,12 @@ public class AsociadoServiceImpl implements AsociadoService{
 	}
 
 	@Override
-	public Asociado consultar(long id) {
+	public Usuario consultar(long id) {
 		return asociadoRepository.findById(id);
 	}
 
 	@Override
-	public List<Asociado> listar() {
+	public List<Usuario> listar() {
 		return asociadoRepository.findAll();
 	}
 

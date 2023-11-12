@@ -1,6 +1,7 @@
 package com.cootramixtol.sipd.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,10 +25,10 @@ import lombok.Setter;
 public class Conductor {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigo")
 	private long codigo;
-	@Column(name = "identificacion")
+	@Column(name = "identificacion", unique = true)
 	private int identificacion;
 	@Column(name = "nombres")
 	private String nombres;
@@ -46,6 +48,10 @@ public class Conductor {
 	private LocalDate fechaRegistro;
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
+
+	@Column(name = "detalle")
+	@OneToMany(mappedBy = "conductor")
+    private List<VehiculoConductor> vehiculoConductores;
 
 	public Conductor() {
 		// Constructor por defecto vacío

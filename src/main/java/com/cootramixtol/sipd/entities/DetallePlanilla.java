@@ -1,14 +1,12 @@
 package com.cootramixtol.sipd.entities;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -19,22 +17,24 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-@Table(name = "rutas")
-public class Ruta {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigo_ruta")
-    private Long codigoRuta;
-    @Column(name = "nombre")
-    private String nombre;
+@Table(name = "detalle_planillas")
+public class DetallePlanilla {
     
-    @Column(name = "detalles")
-    @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL)
-    private List<DetallePlanilla> detalles;
+    @Id
+    @Column(name = "numero")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long numero;
 
-    public Ruta() {
+    @ManyToOne
+    @JoinColumn(name = "id_planilla")
+    private Planilla planilla;
+
+    @ManyToOne
+    @JoinColumn(name = "id_ruta")
+    private Ruta ruta;
+
+    public DetallePlanilla() {
 		// Constructor por defecto vacío
 	}
-    
+
 }

@@ -23,7 +23,7 @@ import lombok.Setter;
 public class Tarifa {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigo")
 	private int codigo;
 	@Column(name = "gastos_administracion")

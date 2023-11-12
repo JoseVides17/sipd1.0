@@ -2,7 +2,9 @@ package com.cootramixtol.sipd.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,9 +26,9 @@ import lombok.Setter;
 public class Planilla { 
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "numero")
-	private int numero;
+	private Long numero;
 	@Column(name = "fecha")
 	private LocalDate fecha;
 	@Column(name = "hora")
@@ -44,6 +47,10 @@ public class Planilla {
 	private LocalDate fechaRegistro;
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
+
+	@Column(name = "detalles")
+	@OneToMany(mappedBy = "planilla", cascade = CascadeType.ALL)
+    private List<DetallePlanilla> detalles;
 
 	public Planilla() {
 		// Constructor por defecto vacío
