@@ -33,6 +33,10 @@ public class Ruta {
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL)
     private List<DetallePlanilla> detalles;
 
+    @Column(name = "despachos")
+    @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL)
+    private List<Despacho> despachos;
+
     public Ruta() {
 		// Constructor por defecto vacío
 	}

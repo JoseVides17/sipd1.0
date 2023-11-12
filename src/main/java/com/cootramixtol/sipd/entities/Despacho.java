@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,10 +29,12 @@ public class Despacho {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private long id;
-	@Column(name = "ruta")
-	private String ruta;
-	@Column(name = "placa_vehiculo")
-	private String placaVehiculo;
+	@ManyToOne
+	@JoinColumn(name = "ruta_id")
+	private Ruta ruta;
+	@ManyToOne
+    @JoinColumn(name = "placa_vehiculo")
+    private Vehiculo vehiculo;
 	@Column(name = "hora")
 	private LocalDateTime hora;
 	@Column(name = "fecha")

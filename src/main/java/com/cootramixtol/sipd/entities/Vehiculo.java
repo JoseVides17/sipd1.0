@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -64,6 +65,9 @@ public class Vehiculo {
 	@Column(name = "planillas")
 	@OneToMany(mappedBy = "vehiculo")
     private List<Planilla> planillas;
+
+	@OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL)
+    private List<Despacho> despachos;
 
 	public Vehiculo() {
 		// Constructor por defecto vacío
