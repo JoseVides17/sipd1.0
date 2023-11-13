@@ -1,4 +1,4 @@
- package com.cootramixtol.sipd.dtos.response;
+package com.cootramixtol.sipd.dtos.response;
 
 import java.util.Date;
 

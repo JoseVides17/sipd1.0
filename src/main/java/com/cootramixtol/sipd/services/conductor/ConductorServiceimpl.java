@@ -9,12 +9,11 @@ import org.springframework.stereotype.Service;
 import com.cootramixtol.sipd.dtos.request.CrearConductorDtoReq;
 import com.cootramixtol.sipd.dtos.response.CrearConductorDtoResp;
 import com.cootramixtol.sipd.entities.Conductor;
-import com.cootramixtol.sipd.entities.Usuario;
 import com.cootramixtol.sipd.mapper.Mapeador;
 import com.cootramixtol.sipd.repositories.ConductorRepository;
 
 @Service
-public class ConductorServiceimpl implements ConductorService{
+public class ConductorServiceimpl implements ConductorService {
 
     @Autowired
     private ConductorRepository conductorRepository;
@@ -35,14 +34,14 @@ public class ConductorServiceimpl implements ConductorService{
         var existe = conductorRepository.findByIdentificacion(crearConductorDtoReq.getIdentificacion());
 
         if (Objects.nonNull(existe)) {
-			
-			return null;
-		}
+
+            return null;
+        }
 
         Conductor conductor = Mapeador.INSTANCE.mapConductor(crearConductorDtoReq);
-	    Conductor conductorGuardado = conductorRepository.save(conductor);       
-		return Mapeador.INSTANCE.mapConductor(conductorGuardado);
+        Conductor conductorGuardado = conductorRepository.save(conductor);
+        return Mapeador.INSTANCE.mapConductor(conductorGuardado);
 
     }
-    
+
 }

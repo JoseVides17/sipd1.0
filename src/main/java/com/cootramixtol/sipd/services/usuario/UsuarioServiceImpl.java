@@ -16,35 +16,33 @@ import com.cootramixtol.sipd.repositories.RolRepository;
 import com.cootramixtol.sipd.repositories.UsuarioRepository;
 
 @Service
-public class UsuarioServiceImpl implements UsuarioService{
-	
+public class UsuarioServiceImpl implements UsuarioService {
 
 	@Autowired
-	private UsuarioRepository usuarioRepository; 
+	private UsuarioRepository usuarioRepository;
 
 	@Autowired
 	private RolRepository rolRepository;
-		
 
 	@Override
 	public CrearUsuarioDtoResp registrar(CrearUsuarioDtoReq crearUsuarioDtoReq) {
 
 		var existe = usuarioRepository.findByIdentificacion(crearUsuarioDtoReq.getIdentificacion());
 		var existePorCorreo = usuarioRepository.findByCorreo(crearUsuarioDtoReq.getCorreo());
-		
+
 		if (Objects.nonNull(existe) && Objects.nonNull(existePorCorreo)) {
-			
+
 			return null;
 		}
 
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        crearUsuarioDtoReq.setClave(bCryptPasswordEncoder.encode(crearUsuarioDtoReq.getClave()));
+		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+		crearUsuarioDtoReq.setClave(bCryptPasswordEncoder.encode(crearUsuarioDtoReq.getClave()));
 
 		Rol rol = rolRepository.findByDescripcion(crearUsuarioDtoReq.getRol());
 
-	    Usuario usuario = Mapeador.INSTANCE.mapUsuario(crearUsuarioDtoReq);
+		Usuario usuario = Mapeador.INSTANCE.mapUsuario(crearUsuarioDtoReq);
 		usuario.setRol(rol);
-		Usuario usuarioGuardado = usuarioRepository.save(usuario);       
+		Usuario usuarioGuardado = usuarioRepository.save(usuario);
 		return Mapeador.INSTANCE.mapUsuario(usuarioGuardado);
 
 	}

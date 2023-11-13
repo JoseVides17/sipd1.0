@@ -7,9 +7,11 @@ import com.cootramixtol.sipd.dtos.response.CrearUsuarioDtoResp;
 import com.cootramixtol.sipd.entities.Usuario;
 
 public interface UsuarioService {
-	
-	 CrearUsuarioDtoResp registrar(CrearUsuarioDtoReq crearUsuarioDto);
-	 Usuario consultar(long id);
-	 List<Usuario> listar();
 
-} 
+	CrearUsuarioDtoResp registrar(CrearUsuarioDtoReq crearUsuarioDto);
+
+	Usuario consultar(long id);
+
+	List<Usuario> listar();
+
+}

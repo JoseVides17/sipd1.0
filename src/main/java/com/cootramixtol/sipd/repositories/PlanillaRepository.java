@@ -7,7 +7,7 @@ import com.cootramixtol.sipd.entities.Planilla;
 
 @Repository
 public interface PlanillaRepository extends JpaRepository<Planilla, Long>{
-    
+
      Planilla findById(long id);
 
 }

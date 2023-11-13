@@ -1,5 +1,7 @@
 package com.cootramixtol.sipd.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +31,7 @@ public class Rol {
 	@Column(name = "descripcion", unique = true)
 	private String descripcion;
 
-	@OneToOne(mappedBy = "rol")
-    private Usuario usuario;
+	@OneToMany(mappedBy = "rol")
+    private List<Usuario> usuarios;
 
 }
