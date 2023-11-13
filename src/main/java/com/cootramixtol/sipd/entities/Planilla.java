@@ -24,17 +24,16 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
-@Table(name = "Planillas")
+@Table(name = "planillas")
 public class Planilla { 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "numero")
-	private Long numero;
+	@Column(name = "id")
+	private Long id;
 	@Column(name = "fecha")
 	private LocalDate fecha;
-	@Column(name = "hora")
-	private LocalDateTime hora;
+
 	@Column(name = "estado")
 	private int estado;
 	@Column(name = "fecha_registro")
@@ -47,24 +46,19 @@ public class Planilla {
     private List<DetallePlanilla> detalles;
 
 	@ManyToOne
-	@JoinColumn(name = "codigo_tarifa")
+	@JoinColumn(name = "tarifa_id")
 	private Tarifa tarifa;
 
 	@ManyToOne
-	@JoinColumn(name = "id_conductor")
+	@JoinColumn(name = "conductor_id")
 	private Conductor conductor;
 
 	@ManyToOne
-	@JoinColumn(name = "placa_vehiculo")
+	@JoinColumn(name = "vehiculo_id")
 	private Vehiculo vehiculo;
 
 	@ManyToOne
 	@JoinColumn(name = "registrado_por")
 	private Usuario registradoPor;
-
-
-	public Planilla() {
-		// Constructor por defecto vacío
-	}
 
 }

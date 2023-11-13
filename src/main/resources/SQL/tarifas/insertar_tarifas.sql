@@ -1,0 +1,2 @@
+INSERT INTO `cootrami_sipd_api`.`tarifas` (`aporte_parqueadero`, `aporte_social`, `aportes_gastos_varios`, `fondo_reposicion`, `gastos_administracion`, `total`) VALUES ('3000', '0', '0', '0', '20000', '23000');
+INSERT INTO `cootrami_sipd_api`.`tarifas` (`aporte_parqueadero`, `aporte_social`, `aportes_gastos_varios`, `fondo_reposicion`, `gastos_administracion`, `total`) VALUES ('0', '0', '0', '0', '0', '0');

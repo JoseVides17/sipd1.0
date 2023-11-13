@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cootramixtol.sipd.dtos.request.CrearConductorDtoReq;
+import com.cootramixtol.sipd.dtos.response.CrearConductorDtoResp;
 import com.cootramixtol.sipd.entities.Conductor;
 import com.cootramixtol.sipd.services.conductor.ConductorService;
 
@@ -26,7 +28,9 @@ public class ConductorController {
     }
 
     @PostMapping
-    public ResponseEntity<Conductor> registrar(@RequestBody Conductor conductor){
+    public ResponseEntity<CrearConductorDtoResp> registrar(@RequestBody CrearConductorDtoReq conductor){
+
+        
         return ResponseEntity.ok(conductorService.registrar(conductor));
     } 
     

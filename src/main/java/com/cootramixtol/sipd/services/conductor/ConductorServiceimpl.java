@@ -28,7 +28,7 @@ public class ConductorServiceimpl implements ConductorService{
     }
 
     @Override
-    public CrearConductorDtoResp registrar(CrearConductorDtoReq crearConductorDtoReq) {
+    public registrar(CrearConductorDtoReq crearConductorDtoReq) {
 
         var existe = conductorRepository.findByIdentificacion(crearConductorDtoReq.getIdentificacion());
 

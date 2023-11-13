@@ -40,7 +40,6 @@ public class UsuarioServiceImpl implements UsuarioService{
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         crearUsuarioDto.setClave(bCryptPasswordEncoder.encode(crearUsuarioDto.getClave()));
 
-
 		Rol rol = rolRepository.findByDescripcion(crearUsuarioDto.getRol());
 		
 

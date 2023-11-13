@@ -16,23 +16,25 @@ import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
 @Getter
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Vehiculos")
 public class Vehiculo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo")
-	private long codigo;
+	@Column(name = "id")
+	private long id;
 	@Column(name = "placa", unique = true)
 	private String placa;
-	@Column(name = "id_conductor")
-	private long idConductor;
+	@Column(name = "conductor_id")
+	private long conductorId;
 	@Column(name = "tipo")
 	private String tipo;
 	@Column(name = "marca")
@@ -43,8 +45,8 @@ public class Vehiculo {
 	private int capacidadPasajeros;
 	@Column(name = "tarjeta_propiedad")
 	private String tarjetaPropiedad;
-	@Column(name = "codigo_tarifa")
-	private int codigoTarifa;
+	@Column(name = "tarifa_id")
+	private int tarifaId;
 	@Column(name = "activo")
 	private int activo;
 	@Column(name = "fecha_registro")
@@ -53,14 +55,12 @@ public class Vehiculo {
 	private LocalDate ultimaFechaActualizacion;
 	@Column(name = "vigencia_soat")
 	private Date vigenciaSoat;
+	@Column(name = "vigencia_rtm")
+	private Date vigenciaRtm;
 
 	@Column(name = "vehiculoAsociado")
 	@OneToMany(mappedBy = "vehiculo")
     private List<VehiculoUsuario> vehiculoUsuarios;
-
-	@Column(name = "detalle")
-	@OneToMany(mappedBy = "vehiculo")
-    private List<VehiculoConductor> vehiculoConductores;
 
 	@Column(name = "planillas")
 	@OneToMany(mappedBy = "vehiculo")
@@ -69,8 +69,6 @@ public class Vehiculo {
 	@OneToMany(mappedBy = "vehiculo", cascade = CascadeType.ALL)
     private List<Despacho> despachos;
 
-	public Vehiculo() {
-		// Constructor por defecto vacío
-	}
+
 
 }

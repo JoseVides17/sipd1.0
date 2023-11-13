@@ -16,12 +16,14 @@ import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Despachos")
 public class Despacho { 
 	
@@ -33,7 +35,7 @@ public class Despacho {
 	@JoinColumn(name = "ruta_id")
 	private Ruta ruta;
 	@ManyToOne
-    @JoinColumn(name = "placa_vehiculo")
+    @JoinColumn(name = "vehiculo_id")
     private Vehiculo vehiculo;
 	@Column(name = "hora")
 	private LocalDateTime hora;
@@ -44,9 +46,6 @@ public class Despacho {
 	@Column(name = "fecha_registro")
 	private LocalDate fechaRegistro;
 
-	public Despacho() {
-		// Constructor por defecto vacío
-	}
 	
 
 }

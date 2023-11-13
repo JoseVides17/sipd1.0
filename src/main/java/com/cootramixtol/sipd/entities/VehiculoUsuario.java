@@ -22,15 +22,15 @@ public class VehiculoUsuario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigo")
-    private Long codigo;
+    @Column(name = "id")
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_vehiculo")
+    @JoinColumn(name = "vehiculo_id")
     private Vehiculo vehiculo;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
 }

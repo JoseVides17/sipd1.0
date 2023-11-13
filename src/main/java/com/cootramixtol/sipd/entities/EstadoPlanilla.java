@@ -20,7 +20,7 @@ public class EstadoPlanilla {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigo")
+    @Column(name = "id")
     private int codigo;
     @Column(name = "descripcion")
     private String descripcion;

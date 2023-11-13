@@ -26,8 +26,8 @@ public class Conductor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo")
-	private long codigo;
+	@Column(name = "id")
+	private long id;
 	@Column(name = "identificacion", unique = true)
 	private long identificacion;
 	@Column(name = "nombres")
@@ -48,10 +48,6 @@ public class Conductor {
 	private LocalDate fechaRegistro;
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
-
-	@Column(name = "detalle")
-	@OneToMany(mappedBy = "conductor")
-    private List<VehiculoConductor> vehiculoConductores;
 
 	@Column(name = "planillas")
 	@OneToMany(mappedBy = "conductor")
