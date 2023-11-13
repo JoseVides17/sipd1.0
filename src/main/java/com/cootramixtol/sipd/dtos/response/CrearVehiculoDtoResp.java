@@ -7,7 +7,6 @@ import lombok.Setter;
 
 @Setter
 @Getter
-
 public class CrearVehiculoDtoResp {
 
     private String placa;
