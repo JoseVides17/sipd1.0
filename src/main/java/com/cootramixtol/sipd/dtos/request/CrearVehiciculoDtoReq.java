@@ -10,13 +10,13 @@ import lombok.Setter;
 public class CrearVehiciculoDtoReq {
 
 	private String placa;
-	private long idConductor;
+	private long conductorId;
 	private String tipo;
 	private String marca;
-	private Date modelo;
+	private String modelo;
 	private int capacidadPasajeros;
 	private String tarjetaPropiedad;
-	private int codigoTarifa;
+	private long tarifaId;
 	private Date vigenciaSoat;
 	private Date vigenciaRtm;
     

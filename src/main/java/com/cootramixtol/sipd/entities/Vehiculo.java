@@ -33,8 +33,8 @@ public class Vehiculo {
 	private long id;
 	@Column(name = "placa", unique = true)
 	private String placa;
-	@Column(name = "id_conductor")
-	private long idConductor;
+	@Column(name = "conductor_id")
+	private long conductorId;
 	@Column(name = "tipo")
 	private String tipo;
 	@Column(name = "marca")
@@ -45,8 +45,8 @@ public class Vehiculo {
 	private int capacidadPasajeros;
 	@Column(name = "tarjeta_propiedad")
 	private String tarjetaPropiedad;
-	@Column(name = "tarifa")
-	private int codigoTarifa;
+	@Column(name = "tarifa_id")
+	private int tarifaId;
 	@Column(name = "activo")
 	private int activo;
 	@Column(name = "fecha_registro")
