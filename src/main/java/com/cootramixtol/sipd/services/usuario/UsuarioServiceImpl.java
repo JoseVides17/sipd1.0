@@ -35,7 +35,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 		Usuario usuario = Mapeador.INSTANCE.mapUsuario(crearUsuarioDtoReq);
 		Usuario usuarioGuardado = usuarioRepository.save(usuario);
-		return Mapeador.INSTANCE.mapUsuarioResp(usuarioGuardado);
+		return Mapeador.INSTANCE.mapUsuario(usuarioGuardado);
 
 	}
 
