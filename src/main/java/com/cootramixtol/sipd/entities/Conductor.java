@@ -26,8 +26,8 @@ public class Conductor {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo")
-	private long codigo;
+	@Column(name = "id")
+	private long id;
 	@Column(name = "identificacion", unique = true)
 	private long identificacion;
 	@Column(name = "nombres")

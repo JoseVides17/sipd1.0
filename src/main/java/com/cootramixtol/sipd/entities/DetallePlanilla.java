@@ -32,7 +32,7 @@ public class DetallePlanilla {
     private Planilla planilla;
 
     @ManyToOne
-    @JoinColumn(name = "Sruta_id")
+    @JoinColumn(name = "ruta_id")
     private Ruta ruta;
 
 

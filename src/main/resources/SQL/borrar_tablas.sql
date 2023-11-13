@@ -6,3 +6,4 @@ DROP TABLE `cootrami_sipd_api`.`conductores`;
 DROP TABLE `cootrami_sipd_api`.`despachos`;
 DROP TABLE `cootrami_sipd_api`.`vehiculos`;
 DROP TABLE `cootrami_sipd_api`.`rutas`;
+DROP TABLE `cootrami_sipd_api`.`estado_planillas`;
