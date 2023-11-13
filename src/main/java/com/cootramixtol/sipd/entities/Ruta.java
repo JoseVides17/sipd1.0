@@ -30,7 +30,7 @@ public class Ruta {
     private Long id;
     @Column(name = "nombre")
     private String nombre;
-    
+
     @Column(name = "detalles")
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL)
     private List<DetallePlanilla> detalles;
@@ -38,5 +38,5 @@ public class Ruta {
     @Column(name = "despachos")
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL)
     private List<Despacho> despachos;
-   
+
 }
