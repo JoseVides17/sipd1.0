@@ -47,10 +47,6 @@ public class Usuario {
 	@Column(name = "correo", unique = true)
 	private String correo;
 
-	@Column(name = "vehiculos")
-	@OneToMany(mappedBy = "usuario")
-    private List<VehiculoUsuario> vehiculoUsuarios;
-
 	@Column(name = "planillas_registradas")
 	@OneToMany(mappedBy = "registradoPor")
     private List<Planilla> planillasRegistradas;

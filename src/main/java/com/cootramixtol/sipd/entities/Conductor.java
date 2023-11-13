@@ -49,10 +49,6 @@ public class Conductor {
 	@Column(name = "ultima_fecha_actualizacion")
 	private LocalDate ultimaFechaActualizacion;
 
-	@Column(name = "detalle")
-	@OneToMany(mappedBy = "conductor")
-    private List<VehiculoConductor> vehiculoConductores;
-
 	@Column(name = "planillas")
 	@OneToMany(mappedBy = "conductor")
     private List<Planilla> planillas;

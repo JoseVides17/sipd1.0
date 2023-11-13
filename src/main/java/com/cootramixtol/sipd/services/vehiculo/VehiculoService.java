@@ -11,6 +11,5 @@ public interface VehiculoService {
      CrearVehiculoDtoResp registrar(CrearVehiciculoDtoReq vehiculo);
 	 Vehiculo consultar(long id);
 	 List<Vehiculo> listar();
-
-
+	 List<Vehiculo> listarActivos();
 }

@@ -13,19 +13,21 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "rutas")
 public class Ruta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigo_ruta")
-    private Long codigoRuta;
+    @Column(name = "id")
+    private Long id;
     @Column(name = "nombre")
     private String nombre;
     
@@ -36,9 +38,5 @@ public class Ruta {
     @Column(name = "despachos")
     @OneToMany(mappedBy = "ruta", cascade = CascadeType.ALL)
     private List<Despacho> despachos;
-
-    public Ruta() {
-		// Constructor por defecto vacío
-	}
-    
+   
 }

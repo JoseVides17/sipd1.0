@@ -29,8 +29,8 @@ public class Vehiculo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "codigo")
-	private long codigo;
+	@Column(name = "id")
+	private long id;
 	@Column(name = "placa", unique = true)
 	private String placa;
 	@Column(name = "id_conductor")
@@ -45,7 +45,7 @@ public class Vehiculo {
 	private int capacidadPasajeros;
 	@Column(name = "tarjeta_propiedad")
 	private String tarjetaPropiedad;
-	@Column(name = "codigo_tarifa")
+	@Column(name = "tarifa")
 	private int codigoTarifa;
 	@Column(name = "activo")
 	private int activo;
@@ -61,10 +61,6 @@ public class Vehiculo {
 	@Column(name = "vehiculoAsociado")
 	@OneToMany(mappedBy = "vehiculo")
     private List<VehiculoUsuario> vehiculoUsuarios;
-
-	@Column(name = "detalle")
-	@OneToMany(mappedBy = "vehiculo")
-    private List<VehiculoConductor> vehiculoConductores;
 
 	@Column(name = "planillas")
 	@OneToMany(mappedBy = "vehiculo")

@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Setter
@@ -23,6 +24,7 @@ import lombok.Setter;
 @Entity
 @AllArgsConstructor 
 @Table(name = "Tarifas")
+@NoArgsConstructor
 public class Tarifa {
 	
 	@Id
@@ -46,8 +48,5 @@ public class Tarifa {
 	@OneToMany(mappedBy = "tarifa")
     private List<Planilla> planillas;
 
-	public Tarifa() {
-		// Constructor por defecto vacío
-	}
 
 }

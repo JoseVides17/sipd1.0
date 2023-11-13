@@ -7,11 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -19,6 +19,7 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @Table(name = "Roles")
+@NoArgsConstructor
 public class Rol {
 	
 	@Id 
@@ -30,9 +31,5 @@ public class Rol {
 
 	@OneToOne(mappedBy = "rol")
     private Usuario usuario;
-
-	public Rol() {
-		// Constructor por defecto vacío
-	}
 
 }

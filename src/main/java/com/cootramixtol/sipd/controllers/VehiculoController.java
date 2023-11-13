@@ -37,5 +37,10 @@ public class VehiculoController {
     public ResponseEntity<CrearVehiculoDtoResp> registrar(@RequestBody CrearVehiciculoDtoReq vehiculo){
         return ResponseEntity.ok(vehiculoService.registrar(vehiculo));
     }
+
+    @GetMapping("/activos")
+    public ResponseEntity<List<Vehiculo>> listarActivos(){
+        return ResponseEntity.ok(vehiculoService.listarActivos());
+    }
     
 }

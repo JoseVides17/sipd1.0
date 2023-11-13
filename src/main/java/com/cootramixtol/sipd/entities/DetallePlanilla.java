@@ -11,6 +11,7 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
@@ -18,23 +19,22 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @Table(name = "detalle_planillas")
+@NoArgsConstructor
 public class DetallePlanilla {
     
     @Id
-    @Column(name = "numero")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long numero;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_planilla")
+    @JoinColumn(name = "planilla_id")
     private Planilla planilla;
 
     @ManyToOne
-    @JoinColumn(name = "id_ruta")
+    @JoinColumn(name = "Sruta_id")
     private Ruta ruta;
 
-    public DetallePlanilla() {
-		// Constructor por defecto vacío
-	}
+
 
 }

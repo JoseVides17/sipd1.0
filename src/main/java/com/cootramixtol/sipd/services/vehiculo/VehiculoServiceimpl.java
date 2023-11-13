@@ -34,5 +34,11 @@ public class VehiculoServiceimpl implements VehiculoService{
        Vehiculo nuevoVehiculo =  vehiculoRepository.save(vehiculo);       
        return Mapeador.INSTANCE.MapVehiculo(nuevoVehiculo);
     }
+
+    @Override
+    public List<Vehiculo> listarActivos() {
+
+       return vehiculoRepository.findActive();
+    }
     
 }

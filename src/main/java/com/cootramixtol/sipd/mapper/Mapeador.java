@@ -10,7 +10,7 @@ import com.cootramixtol.sipd.entities.Vehiculo;
 @Mapper
 public interface Mapeador {
     
-      Mapeador INSTANCE = Mappers.getMapper( Mapeador.class );
+      Mapeador INSTANCE = Mappers.getMapper(Mapeador.class);
 
       CrearVehiculoDtoResp MapVehiculo(Vehiculo vehiculo);
       Vehiculo MapVehiculo(CrearVehiciculoDtoReq crearVehiciculoDtoReq);
