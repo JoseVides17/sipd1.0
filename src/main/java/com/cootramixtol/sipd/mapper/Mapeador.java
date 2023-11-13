@@ -8,7 +8,7 @@ import com.cootramixtol.sipd.dtos.response.CrearVehiculoDtoResp;
 import com.cootramixtol.sipd.entities.Vehiculo;
 
 @Mapper
-public interface Mapeador {
+public interface Mapeador{
     
       Mapeador INSTANCE = Mappers.getMapper(Mapeador.class);
 
