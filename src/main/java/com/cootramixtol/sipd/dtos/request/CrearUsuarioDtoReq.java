@@ -12,6 +12,6 @@ public class CrearUsuarioDtoReq {
     private String apellidos;
     private String rol;
     private String clave;
-    private String correo;
+    private String correo;      
 
 }

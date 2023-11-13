@@ -11,6 +11,6 @@ public class CrearUsuarioDtoResp {
     private String nombres;
     private String apellidos;
     private String rol;
-    private String correo;
+    private String correo;      
 
 }

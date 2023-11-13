@@ -12,8 +12,8 @@ import javax.persistence.Table;
 
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -51,9 +51,9 @@ public class Usuario {
 	@OneToMany(mappedBy = "registradoPor")
     private List<Planilla> planillasRegistradas;
 
-	@ManyToOne
-    @JoinColumn(name = "rol_id")
-    private Rol rol;
+	@OneToOne
+	@JoinColumn(name = "rol_id")
+	private Rol rol;
 
 	public Usuario() {
 		// Constructor por defecto vacío

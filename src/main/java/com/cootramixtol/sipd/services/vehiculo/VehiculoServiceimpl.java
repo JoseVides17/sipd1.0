@@ -12,7 +12,7 @@ import com.cootramixtol.sipd.mapper.Mapeador;
 import com.cootramixtol.sipd.repositories.VehiculoRepository;
 
 @Service
-public class VehiculoServiceimpl implements VehiculoService {
+public class VehiculoServiceimpl implements VehiculoService{
 
     @Autowired
     private VehiculoRepository vehiculoRepository;
@@ -30,15 +30,15 @@ public class VehiculoServiceimpl implements VehiculoService {
     @Override
     public CrearVehiculoDtoResp registrar(CrearVehiciculoDtoReq crearVehiciculoDtoReq) {
 
-        Vehiculo vehiculo = Mapeador.INSTANCE.mapVehiculo(crearVehiciculoDtoReq);
-        Vehiculo nuevoVehiculo = vehiculoRepository.save(vehiculo);
-        return Mapeador.INSTANCE.mapVehiculo(nuevoVehiculo);
-
+       Vehiculo vehiculo = Mapeador.INSTANCE.MapVehiculo(crearVehiciculoDtoReq);
+       Vehiculo nuevoVehiculo =  vehiculoRepository.save(vehiculo);       
+       return Mapeador.INSTANCE.MapVehiculo(nuevoVehiculo);
     }
 
     @Override
     public List<Vehiculo> listarActivos() {
-        return vehiculoRepository.findActive();
-    }
 
+       return vehiculoRepository.findActive();
+    }
+    
 }
