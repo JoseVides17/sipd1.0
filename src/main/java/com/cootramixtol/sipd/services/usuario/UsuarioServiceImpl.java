@@ -9,10 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.cootramixtol.sipd.dtos.request.CrearUsuarioDtoReq;
 import com.cootramixtol.sipd.dtos.response.CrearUsuarioDtoResp;
-import com.cootramixtol.sipd.entities.Rol;
 import com.cootramixtol.sipd.entities.Usuario;
 import com.cootramixtol.sipd.mapper.Mapeador;
-import com.cootramixtol.sipd.repositories.RolRepository;
 import com.cootramixtol.sipd.repositories.UsuarioRepository;
 
 @Service
@@ -20,9 +18,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
-
-	@Autowired
-	private RolRepository rolRepository;
 
 	@Override
 	public CrearUsuarioDtoResp registrar(CrearUsuarioDtoReq crearUsuarioDtoReq) {
@@ -38,12 +33,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 		crearUsuarioDtoReq.setClave(bCryptPasswordEncoder.encode(crearUsuarioDtoReq.getClave()));
 
-		Rol rol = rolRepository.findByDescripcion(crearUsuarioDtoReq.getRol());
-
 		Usuario usuario = Mapeador.INSTANCE.mapUsuario(crearUsuarioDtoReq);
-		usuario.setRol(rol);
 		Usuario usuarioGuardado = usuarioRepository.save(usuario);
-		return Mapeador.INSTANCE.mapUsuario(usuarioGuardado);
+		return Mapeador.INSTANCE.mapUsuarioResp(usuarioGuardado);
 
 	}
 
