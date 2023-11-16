@@ -9,10 +9,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Table;
-
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,7 +39,7 @@ public class Vehiculo {
 	@Column(name = "marca")
 	private String marca;
 	@Column(name = "modelo")
-	private Date modelo;
+	private LocalDate modelo;
 	@Column(name = "capacidad_pasajeros")
 	private int capacidadPasajeros;
 	@Column(name = "tarjeta_propiedad")

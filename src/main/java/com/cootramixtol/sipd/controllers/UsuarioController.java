@@ -22,7 +22,6 @@ import com.cootramixtol.sipd.services.usuario.UsuarioService;
 @RequestMapping("api/usuarios") 
 public class UsuarioController {
 	
-	
 	@Autowired
 	private UsuarioService usuarioService;
 	

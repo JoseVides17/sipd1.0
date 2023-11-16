@@ -1,5 +1,7 @@
 package com.cootramixtol.sipd.dtos.response;
 
+import com.cootramixtol.sipd.entities.Rol;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +12,7 @@ public class CrearUsuarioDtoResp {
     private long identificacion;
     private String nombres;
     private String apellidos;
-    private String rol;
+    private Rol rol;
     private String correo;      
 
 }

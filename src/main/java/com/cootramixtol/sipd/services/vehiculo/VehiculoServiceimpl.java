@@ -30,9 +30,9 @@ public class VehiculoServiceimpl implements VehiculoService{
     @Override
     public CrearVehiculoDtoResp registrar(CrearVehiciculoDtoReq crearVehiciculoDtoReq) {
 
-       Vehiculo vehiculo = Mapeador.INSTANCE.MapVehiculo(crearVehiciculoDtoReq);
+       Vehiculo vehiculo = Mapeador.INSTANCE.mapVehiculo(crearVehiciculoDtoReq);
        Vehiculo nuevoVehiculo =  vehiculoRepository.save(vehiculo);       
-       return Mapeador.INSTANCE.MapVehiculo(nuevoVehiculo);
+       return Mapeador.INSTANCE.mapVehiculo(nuevoVehiculo);
     }
 
     @Override
