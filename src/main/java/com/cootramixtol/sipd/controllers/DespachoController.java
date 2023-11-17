@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cootramixtol.sipd.dtos.request.CrearDespachoDtoReq;
+import com.cootramixtol.sipd.dtos.response.CrearDespachoDtoResp;
 import com.cootramixtol.sipd.entities.Despacho;
 import com.cootramixtol.sipd.services.despacho.DespachoService;
 
@@ -26,8 +28,8 @@ public class DespachoController {
     }
 
     @PostMapping
-    public ResponseEntity<Despacho> resgistrar(@RequestBody Despacho despacho){
-        return ResponseEntity.ok(despachoService.registrar(despacho));
+    public ResponseEntity<CrearDespachoDtoResp> resgistrar(@RequestBody CrearDespachoDtoReq crearDespachoDtoReq){
+        return ResponseEntity.ok(despachoService.registrar(crearDespachoDtoReq));
     }
     
 }

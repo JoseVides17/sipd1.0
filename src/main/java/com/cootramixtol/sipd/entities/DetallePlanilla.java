@@ -1,5 +1,7 @@
 package com.cootramixtol.sipd.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -27,9 +30,8 @@ public class DetallePlanilla {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "planilla_id")
-    private Planilla planilla;
+    @OneToMany(mappedBy = "detalles")
+    private List<Planilla> planillas;
 
     @ManyToOne
     @JoinColumn(name = "ruta_id")

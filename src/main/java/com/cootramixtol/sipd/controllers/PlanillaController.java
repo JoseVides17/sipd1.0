@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cootramixtol.sipd.dtos.request.CrearPlanillaDtoReq;
+import com.cootramixtol.sipd.dtos.response.CrearPlanillaDtoResp;
 import com.cootramixtol.sipd.entities.Planilla;
 import com.cootramixtol.sipd.services.planilla.PlanillaService;
 
@@ -20,8 +22,8 @@ public class PlanillaController {
     private PlanillaService planillaService;
 
     @PostMapping
-    public ResponseEntity<Planilla> registrar(@RequestBody Planilla planilla){
-        return ResponseEntity.ok(planillaService.registrar(planilla));
+    public ResponseEntity<CrearPlanillaDtoResp> registrar(@RequestBody CrearPlanillaDtoReq crearPlanillaDtoReq){
+        return ResponseEntity.ok(planillaService.registrar(crearPlanillaDtoReq));
     }
 
     @GetMapping
